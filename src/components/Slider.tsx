@@ -17,7 +17,7 @@ export default function HomeSwiper() {
             effect="fade"
             speed={1500}
         >
-            {[1,2,3,4,5,6,7,8].map((item, index) => (
+            {[1,2,3,4,5,6,7].map((item, index) => (
                 <SwiperSlide key={index}>
                     <div className=" w-full bg-slate-900" >
                         <Image src={`/assets/images/slides/slide${item}.webp`}
