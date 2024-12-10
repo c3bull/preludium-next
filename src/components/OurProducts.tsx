@@ -30,7 +30,7 @@ export default function OurProducts() {
                     loop={true}
                     speed={500}
                 >
-                    {shuffle(allProductsData).map((item:AllProductsInterface) => (
+                    {(allProductsData).map((item:AllProductsInterface) => (
                         <SwiperSlide key={item.id}>
                             <Image
                                 src={`/assets/images/bottles/${item.bottle}.webp`}
