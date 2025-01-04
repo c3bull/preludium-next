@@ -7,21 +7,18 @@ import allProductsData from "@/app/data/allProducts";
 import {shuffle} from "lodash";
 import Image from "next/image";
 import {AllProductsInterface} from "@/app/data/allProducts";
+import SectionHeader from "@/components/SectionHeader";
 export default function OurProducts() {
     // const {data} = useQuery(GET_ALL_PRODUCTS);
 
     return (
         <div className="m-0 flex justify-center">
             <div className="flex w-2/3 flex-col items-center pb-10">
-                {/*<SectionHeader*/}
-                {/*    icon={<img*/}
-                {/*        src={imageUrl('icons/IoWaterOutline.webp')}*/}
-                {/*        width='50px'*/}
-                {/*        height='50px'*/}
-                {/*        alt='nasze produkty'*/}
-                {/*    />}>*/}
-                {/*    Nasze Produkty*/}
-                {/*</SectionHeader>*/}
+
+                <SectionHeader
+                    icon="water"
+                    title="Nasze produkty"
+                />
                 <Swiper
                     className="relative max-h-[90vh] w-full"
                     modules={[Autoplay]}
@@ -39,7 +36,7 @@ export default function OurProducts() {
                                 width={0}
                                 height={0}
                                 sizes="100vw"
-                                className={`w-full object-cover cursor-pointer`}
+                                className={`w-full object-cover cursor-pointer min-h-full`}
                             />
                         </SwiperSlide>
                     ))}

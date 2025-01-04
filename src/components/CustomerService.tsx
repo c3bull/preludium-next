@@ -1,12 +1,5 @@
 import Image from "next/image";
-
-interface CustomerServiceInterface {
-    icon: Icon,
-    contactType: string,
-}
-
-type Icon = "location" | "email" | "phone" | "time";
-
+import {CustomerServiceInterface} from "@/utils/typesAndInterfaces"
 
 export default function CustomerService({icon, contactType}: CustomerServiceInterface) {
 

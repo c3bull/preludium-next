@@ -2,11 +2,7 @@
 
 import {usePathname} from "next/navigation";
 import Link from "next/link";
-
-interface NavbarLinks {
-    link: string;
-    name: string;
-}
+import {NavbarLinks} from "@/utils/typesAndInterfaces";
 
 export default function Navbar() {
 
