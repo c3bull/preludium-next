@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .custom-container {
+        @apply w-full sm:max-w-[500px] md:max-w-full lg:max-w-[960px] xl:max-w-[1096px] 2xl:max-w-[1280px];
+    }
+    .custom-paddings {
+        @apply px-4 sm:px-0 md:px-10 lg:px-0;
+    }
+}
+
+.swiper--after:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 100%);
+    width: 100%;
+    height: 25%;
+}
+
+
+.liquid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    background: #ff6900;
+    transition: 0.7s;
+}
+
+button:hover .liquid {
+    top: -60px;
+}
+
+button .liquid:before, button .liquid:after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -1370px;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.liquid:before {
+    border-radius: 45%;
+    background: #edf2f7;
+    animation: animate 5s linear infinite;
+}
+
+.liquid:after {
+    border-radius: 40%;
+    background: rgb(237, 242, 247, 0.3);
+    animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, 75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, 75%) rotate(360deg);
+    }
+}

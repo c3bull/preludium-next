@@ -5,10 +5,9 @@ export default function HomeOrderProducts() {
 
     return (
         <>
-            <div className="w-full mt-2 flex flex-col items-center bg-gray-200 pb-16 shadow-inner">
+            <div className="w-full flex flex-col items-center bg-gray-200 shadow-inner custom-paddings pb-4 md:pb-8 lg:pb-10">
                 <SectionHeader icon='order' title='Złóż zamówienie'/>
-                <div
-                    className="w-full relative flex flex-row overflow-hidden border border-gray-400 bg-cover p-5 shadow-xl sm:max-w-[500px] md:max-w-full lg:max-w-[960px] xl:max-w-[1096px] 2xl:max-w-[1280px]">
+                <div className="w-full relative flex flex-row overflow-hidden border border-gray-400 rounded-lg bg-cover p-5 shadow-xl custom-container custom-paddings">
                     <div
                         className="hidden h-auto w-96 bg-cover md:block"
                         style={{
@@ -37,13 +36,14 @@ export default function HomeOrderProducts() {
                                     ].map((line) => {
                                         return (
                                             <div key={line} className="w-auto">
-                                                <div className="flex lg:text-md ml-1 text-xs leading-7 xl:text-lg">
-                                                    <div className="inline-block pr-2 pt-0.5">
+                                                <div className="flex lg:text-md ml-1 text-xs leading-7 lg:text-[16px] xl:text-[18px]">
+                                                    <div className="inline-block pr-2 pt-1.5 xl:pt-1">
                                                         <Image
                                                             src={`/assets/images/icons/AiOutlineCheckCircle.webp`}
                                                             alt="checkout"
-                                                            width={16}
-                                                            height={16}
+                                                            width={22}
+                                                            height={22}
+                                                            className='h-[16px] w-[16px] xl:w-[21px] xl:h-[21px]'
                                                         />
                                                     </div>
                                                     <p className='mb-1'>{line}</p>
@@ -57,7 +57,7 @@ export default function HomeOrderProducts() {
                         <div className="flex flex-1 items-center justify-center">
                             <button
                                 type="button"
-                                className="relative block w-full overflow-hidden border-2 border-primary py-3 font-bold no-underline md:mt-7 md:w-56 lg:mt-4 lg:w-72 xl:w-96"
+                                className="rounded-md relative block w-full overflow-hidden border-2 border-primary py-3 font-bold no-underline md:mt-7 max-w-[400px] md:w-[224px] lg:mt-4 lg:w-[300px] xl:w-[400px]"
                                 // onClick={goToOrder}
                             >
               <span className="relative z-10 text-lg uppercase tracking-widest text-black">

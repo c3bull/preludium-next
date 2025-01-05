@@ -12,9 +12,8 @@ export default function OurProducts() {
     // const {data} = useQuery(GET_ALL_PRODUCTS);
 
     return (
-        <div className="m-0 flex justify-center">
-            <div className="flex w-2/3 flex-col items-center pb-10">
-
+        <div className="w-full flex justify-center">
+            <div className="custom-paddings custom-container flex flex-col items-center pb-4 md:pb-10">
                 <SectionHeader
                     icon="water"
                     title="Nasze produkty"
@@ -22,7 +21,7 @@ export default function OurProducts() {
                 <Swiper
                     className="relative max-h-[90vh] w-full"
                     modules={[Autoplay]}
-                    slidesPerView={8}
+                    slidesPerView={screen.width > 768 ? 8 : 5}
                     autoplay={{delay: 1300}}
                     loop={true}
                     speed={500}

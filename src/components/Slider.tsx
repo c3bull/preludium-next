@@ -25,7 +25,7 @@ export default function HomeSwiper() {
                                width={0}
                                height={0}
                                sizes="100vw"
-                               className={`w-full object-cover aspect-video`}
+                               className={`w-full object-cover aspect-video max-h-[600px]`}
                         >
                         </Image>
                     </div>
