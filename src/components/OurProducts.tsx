@@ -2,14 +2,28 @@
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay} from "swiper/modules";
-import allProductsData from "@/app/data/allProducts";
-//@ts-ignore
-import {shuffle} from "lodash";
 import Image from "next/image";
 import {AllProductsInterface} from "@/app/data/allProducts";
 import SectionHeader from "@/components/SectionHeader";
-export default function OurProducts() {
+import {useEffect, useState} from "react";
+
+export default function OurProducts({allProducts}:any) {
     // const {data} = useQuery(GET_ALL_PRODUCTS);
+    const [products, setProducts] = useState(5)
+    console.log(allProducts)
+    useEffect(() => {
+        slidesAmount()
+    }, []);
+
+    const slidesAmount = () => {
+        if (typeof window !== "undefined") {
+            if (window.innerWidth > 768) {
+                setProducts(8);
+            } else {
+                setProducts(5);
+            }
+        }
+    }
 
     return (
         <div className="w-full flex justify-center">
@@ -21,13 +35,13 @@ export default function OurProducts() {
                 <Swiper
                     className="relative max-h-[90vh] w-full"
                     modules={[Autoplay]}
-                    slidesPerView={screen.width > 768 ? 8 : 5}
+                    slidesPerView={products ? products : 5}
                     autoplay={{delay: 1300}}
                     loop={true}
                     speed={500}
                 >
-                    {(allProductsData).map((item:AllProductsInterface) => (
-                        <SwiperSlide key={item.id}>
+                    {(allProducts.data).map((item: AllProductsInterface) => (
+                        <SwiperSlide key={item.number}>
                             <Image
                                 src={`/assets/images/bottles/${item.bottle}.webp`}
                                 // onClick={goToProducts}
@@ -44,3 +58,13 @@ export default function OurProducts() {
         </div>
     );
 }
+
+// export async function getServerSideProps(context) {
+//     const data = await fetch('https://api.example.com/data');
+//
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// }

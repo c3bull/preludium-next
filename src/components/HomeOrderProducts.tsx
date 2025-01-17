@@ -57,7 +57,7 @@ export default function HomeOrderProducts() {
                         <div className="flex flex-1 items-center justify-center">
                             <button
                                 type="button"
-                                className="rounded-md relative block w-full overflow-hidden border-2 border-primary py-3 font-bold no-underline md:mt-7 max-w-[400px] md:w-[224px] lg:mt-4 lg:w-[300px] xl:w-[400px]"
+                                className="rounded-md relative block w-full overflow-hidden border-x-2  border-primary py-3 font-bold no-underline md:mt-7 max-w-[400px] md:w-[224px] lg:mt-4 lg:w-[300px] xl:w-[400px]"
                                 // onClick={goToOrder}
                             >
               <span className="relative z-10 text-lg uppercase tracking-widest text-black">

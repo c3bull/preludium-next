@@ -27,9 +27,16 @@ async function connectDB() {
             bufferCommands: false,
         };
 
-        cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => {
-            return mongoose
-        });
+        try {
+            cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => mongoose);
+            console.log("connected to mongodb");
+        } catch (error) {
+            throw new Error('Failed to connect to MongoDB: ' + error.message);
+        }
+
+        // cached.promise = mongoose.connect(DATABASE_URL, opts).then((mongoose) => {
+        //     return mongoose
+        // });
     }
 
     cached.conn = await cached.promise;

@@ -6,7 +6,7 @@ export default function Footer() {
 
     return (
         <footer className='px-4 md:px-10 lg:px-0 bg-primary text-black flex flex-col lg:flex-row items-center justify-center py-4 md:py-10 lg:py-14'>
-            <div className=' w-fit sm:w-full max-w-[1280px] flex flex-col sm:flex-row gap-6 md:gap-14 lg:gap-20 justify-center'>
+            <div className='w-fit sm:w-full max-w-[1280px] flex flex-col sm:flex-row gap-6 md:gap-14 lg:gap-20 justify-center'>
                 <div className='font-semibold uppercase flex flex-col md:flex-row justify-center gap-6 md:gap-14 lg:gap-20'>
                 <div className='flex flex-col'>
                     <Link href="/">Produkty</Link>

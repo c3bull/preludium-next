@@ -19,14 +19,38 @@ import HomeOrderProducts from "@/components/HomeOrderProducts";
 // const data = await response.json();
 // console.log(data);
 
-export default function Home() {
+async function getAllProducts() {
+    let response = await fetch('http://localhost:3000/api/products/getProducts', {
+        cache: 'no-store'
+    })
+
+    response = await response.json()
+    return response
+}
+
+export default async function Home() {
+
+    const allProducts = await getAllProducts()
+
+    // const posts = await data.json()
+    console.log(allProducts)
+
     return (
-        <div className="">
+        <div className="min-w-[260px]">
             <Navbar/>
             <Slider/>
-            <OurProducts/>
+            <OurProducts allProducts={allProducts} />
             <HomeOrderProducts/>
             <Footer/>
         </div>
     );
 }
+
+// export async function getStaticProps() {
+//     const data = await fetch('http://localhost:3000/api/products/getProducts');
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// }
