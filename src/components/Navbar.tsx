@@ -17,7 +17,7 @@ export default function Navbar() {
             "name": "Kontakt"
         },
         {
-            "link": "/products",
+            "link": "/produkty",
             "name": "Produkty"
         },
         {
