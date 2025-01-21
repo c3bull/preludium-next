@@ -32,7 +32,6 @@ export default async function Home() {
 
     const allProducts = await getAllProducts()
 
-    // const posts = await data.json()
     console.log(allProducts)
 
     return (
@@ -45,12 +44,3 @@ export default async function Home() {
         </div>
     );
 }
-
-// export async function getStaticProps() {
-//     const data = await fetch('http://localhost:3000/api/products/getProducts');
-//     return {
-//         props: {
-//             data,
-//         },
-//     };
-// }

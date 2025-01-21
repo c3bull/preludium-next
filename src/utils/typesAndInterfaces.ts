@@ -16,3 +16,10 @@ export interface SectionHeaderInterface {
     icon: SectionIcons;
     title: string;
 }
+
+export interface CategoryInterface {
+    link: string;
+    image: string;
+    text: string;
+    color?: string;
+}
