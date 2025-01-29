@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 export interface CustomerServiceInterface {
     icon: FooterIcons,
     contactType: string,
@@ -22,4 +24,16 @@ export interface CategoryInterface {
     image: string;
     text: string;
     color?: string;
+}
+
+export interface ContactWayInterface {
+    title: string;
+    name: string;
+    href: string;
+    name2?: string;
+    href2?: string;
+    name3?: string;
+    href3?: string;
+    target?: string;
+    icon: ReactNode;
 }
